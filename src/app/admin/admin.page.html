@@ -1,0 +1,68 @@
+<div class="Loading" [style.display]="DisplayLoading" [style.animation]="LoadingAnimation">
+  <img src="assets/LoadingGif.gif" alt=""> <p style="font-weight: bold; color: black;">{{LoopText}}</p>
+</div>
+
+<ion-header style="margin-bottom: 50px" [translucent]="true">
+  <ion-toolbar>
+    <ion-button
+      (click)="backToAdmin()"
+      style="float: right"
+      title="Voltar"
+      class="listForm"
+      color="danger"
+      expand="block"
+    >
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title> <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+  [(ngModel)]="procura"
+  placeholder="Procurar"
+  showCancelButton="focus"
+    animated
+  ></ion-searchbar>
+  <ion-grid class="GRIMD">
+    <ion-row>
+      <ion-col hidden>Id</ion-col>
+      <ion-col class="Nome">Nome</ion-col>
+      <ion-col class="Cpf">Cpf</ion-col>
+      <ion-col class = "Data">Data</ion-col>
+      <ion-col class="Detalhes">Detalhes</ion-col>
+    </ion-row>
+    <div *ngFor="let item of receitas.results | filter:procura" class="body-content">
+      <ion-row>
+        <ion-col hidden id="id" #id>{{item.id}}</ion-col>
+        <ion-col class="Nome">{{ item.nome }}</ion-col>
+        <ion-col class="Cpf">{{ item.cpf }}</ion-col>
+        <ion-col class = "Data">{{converterLongDate(item.dataHora) }}</ion-col>
+        <ion-col class="Detalhes">
+          <ion-button
+            title="Visualizar Receita"
+            class="listForm"
+            color="dark"
+            expand="block"
+            (click)="getRecId(item.id)"
+            [disabled]="IsDisabled"
+            style="left: 50%; position: relative; transform: translate(-50%, 0%);"
+          >
+            <ion-icon name="eye"></ion-icon> </ion-button
+        ></ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+
+<div class="footerContainer">
+  <ion-footer class="footer2">
+    <ion-toolbar >
+      <ion-title>
+        <img src="./assets/favicon.png" /> © 2022 Powered by: <a href="https://www.zipsoftware.com.br" target="_blank"> Zip
+        Software</a></ion-title
+      >
+    </ion-toolbar>
+  </ion-footer>
+</div>

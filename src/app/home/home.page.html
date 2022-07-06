@@ -1,0 +1,132 @@
+<div class="MensagemCima">
+<div class="DeuErrado" [style.display] = "DisplayErro" [style.animation]="ErroAnimation">
+  <p
+  (click) = "FechaErro()">
+    x
+  </p>
+  <h4>
+    <p>:(</p>Ops... {{TextoErro}} 
+  </h4>
+  <div class="BarraDeProgresso" [style.animation]="BarraErroAnimation">
+
+  </div>
+</div>
+
+<div [style.display] = "DisplayCerto" [style.animation]="CertoAnimation">
+  <div  class="DeuCerto">
+    <h4>
+      <p>
+        :)
+      </p>
+      {{TextoLoop}}
+    </h4>
+  </div>
+
+  <div class="BarraInferior">
+
+  </div>
+</div>
+</div>
+
+<ion-header style="margin-bottom: 50px" [translucent]="true">
+  <ion-toolbar>
+    <ion-title> <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <br />
+
+  <form class="nova" [formGroup]="fGroup">
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="Nome"
+        type="text"
+        formControlName="Nome"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cpf</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="Cpf"
+        formControlName="Cpf"
+        placeholder="999.999.999-99"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        mask="***.***.***-**"
+        maxlength="14"
+      ></ion-input>
+    </ion-item>
+    <ion-item style="margin-bottom: 75px">
+      <ion-label>Celular</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="Celular"
+        formControlName="Celular"
+        type="tel"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        placeholder="(99) 9999-99999"
+        mask= "(**) *****-****"
+        maxlength="15"
+      ></ion-input>
+    </ion-item>
+    <br />
+    <ion-button
+      (click)="pic();"
+      style="margin-bottom: 100px"
+      expand="block"
+      color="medium"
+    >
+      Anexar Documento 1
+    </ion-button>
+    <img class="center" *ngIf="picture !=''" [src]="picture" />
+    <ion-button
+      (click)="pic2();"
+      style="margin-bottom: 100px"
+      expand="block"
+      color="medium"
+    >
+      Anexar Documento 2
+    </ion-button>
+    <img class="center" *ngIf="picture2 !=''" [src]="picture2" />
+    <ion-button
+      (click)="pic3();"
+      style="margin-bottom: 100px"
+      expand="block"
+      color="medium"
+    >
+      Anexar Documento 3
+    </ion-button>
+    <img class="center" *ngIf="picture3 !=''" [src]="picture3" />
+    <ion-button
+      (click)="pic4();"
+      style="margin-bottom: 100px"
+      expand="block"
+      color="medium"
+    >
+      Anexar Documento 4
+    </ion-button>
+    <img class="center" *ngIf="picture4 !=''" [src]="picture4" />
+    <br />
+    <ion-button
+      style="margin-bottom: 100px"
+      color="success"
+      expand="block"
+      (click)="submit(Nome, Cpf, Celular)"
+      [disabled]=IsDisabled
+    >
+      Enviar
+    </ion-button>
+  </form>
+</ion-content>
+
+<ion-footer class="footer" collapse="fade">
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/favicon.png" /> © 2022 Powered by: <a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold;">Zip
+        Software</a></ion-title
+    >
+  </ion-toolbar>
+</ion-footer>

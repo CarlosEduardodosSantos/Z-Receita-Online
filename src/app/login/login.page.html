@@ -1,0 +1,41 @@
+<ion-header style="margin-bottom: 100px">
+  <ion-toolbar>
+    <ion-title> <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="nova">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Login:</ion-label>
+        <ion-input #login></ion-input>
+      </ion-item>
+      <ion-item style="margin-bottom: 75px">
+        <ion-label>Senha:</ion-label>
+        <ion-input #senha type="password"></ion-input>
+      </ion-item>
+      <ion-button
+        (click)="goToAdmin(login.value, senha.value)"
+        style="margin-bottom: 100px"
+        expand="block"
+        color="primary"
+      >
+        Entrar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/favicon.png" /> © 2022 Powered by:<a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold;"> Zip
+        Software</a></ion-title
+    >
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,129 @@
+.center {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  max-height: 500px;
+  border-bottom: 35px;
+}
+
+.HeaderIONIC {
+  margin-bottom: 50px;
+}
+
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+.listForm {
+  display: inline;
+  max-width: 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.TelaDeLoading {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.Container h1 {
+  font-size: 40px;
+}
+.Nome {
+  width: 25%;
+}
+.Cpf {
+  width: 25%;
+}
+.Data {
+  width: 25%;
+}
+.Celular {
+  width: 25%;
+}
+.Cabecalho {
+  display: block;
+  position: left;
+  width: 64%;
+}
+.CabecalhoReponse {
+  display: none;
+}
+.TextoReponse {
+  display: none;
+}
+
+ion-col {
+  border: solid 1px grey;
+}
+
+@media print {
+  .listForm {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .footer {
+    visibility: hidden;
+  }
+  .center {
+    width: 80%;
+  }
+  .Data {
+    display: none;
+  }
+  .Nome {
+    width: 30%;
+  }
+  .Cpf {
+    width: 30%;
+  }
+  .Celular {
+    width: 30%;
+  }
+.Cabecalho {
+  display: none;
+}
+.CabecalhoReponse {
+  display: block;
+  position: absolute;
+}
+.TextoReponse {
+  display: block;
+}
+.HeaderIONIC {
+  margin-bottom: 30px;
+}
+}
+
+@keyframes DesapareceTela {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
