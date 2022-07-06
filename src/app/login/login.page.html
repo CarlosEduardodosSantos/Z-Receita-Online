@@ -1,6 +1,6 @@
 <ion-header style="margin-bottom: 100px">
   <ion-toolbar>
-    <ion-title> <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title>
+    <ion-title style="left: 30px; position:relative; top: 50%"> <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%);"/> Z-Receita | {{nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,11 +12,11 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-label>Login:</ion-label>
+        <ion-label style="width: 55px;">Login:</ion-label>
         <ion-input #login></ion-input>
       </ion-item>
       <ion-item style="margin-bottom: 75px">
-        <ion-label>Senha:</ion-label>
+        <ion-label style="width: 55px;">Senha:</ion-label>
         <ion-input #senha type="password"></ion-input>
       </ion-item>
       <ion-button
@@ -33,8 +33,8 @@
 
 <ion-footer class="footer">
   <ion-toolbar>
-    <ion-title>
-      <img src="./assets/favicon.png" /> © 2022 Powered by:<a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold;"> Zip
+    <ion-title style="left: 30px; position:relative; top: 50%; font-size: 15px;">
+      <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%); height: 24px;"/> © 2022 Desenvolvido por:<a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold;"> ZiP
         Software</a></ion-title
     >
   </ion-toolbar>

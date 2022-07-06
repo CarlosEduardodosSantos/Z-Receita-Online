@@ -2,8 +2,8 @@
   <div>
     <ion-header style="margin-bottom: 50px">
       <ion-toolbar>
-        <ion-title>
-          <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title
+        <ion-title style="left: 30px; position:relative; top: 50%">
+          <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%);"/> Z-Receita | {{nome}}</ion-title
         >
       </ion-toolbar>
     </ion-header>
@@ -46,7 +46,7 @@
         style="float: right"
       >
         <a style="color: black" href="{{zap}}" target="_blank">
-          <ion-icon name="logo-whatsapp"></ion-icon>
+          <ion-icon name="logo-whatsapp" title="Conversar com Cliente"></ion-icon>
         </a>
       </ion-button>
       <ion-button
@@ -59,8 +59,8 @@
       >
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
-      <ion-title class="Cabecalho">
-        <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title
+      <ion-title class="Cabecalho" style="left: 30px; position:relative; top: 50%; transform: translate(0%, 40%);">
+        <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%);"/> Z-Receita | {{nome}}</ion-title
       >
       <ion-title class="CabecalhoReponse">
         <img src="./assets/favicon.png" /></ion-title
@@ -78,7 +78,7 @@
       <ion-row>
         <ion-col hidden>Id</ion-col>
         <ion-col class="Nome">Nome</ion-col>
-        <ion-col class="Cpf">Cpf</ion-col>
+        <ion-col class="Cpf">CPF</ion-col>
         <ion-col class="Celular">Celular</ion-col>
         <ion-col class="Data">Data</ion-col>
       </ion-row>

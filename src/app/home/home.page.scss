@@ -125,6 +125,14 @@
   width: 100%;
 }
 
+@keyframes ApareceBotao {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @media screen and (min-width: 540px) {
   .nova {

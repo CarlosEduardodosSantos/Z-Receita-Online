@@ -28,9 +28,9 @@
 </div>
 </div>
 
-<ion-header style="margin-bottom: 50px" [translucent]="true">
+<ion-header style="margin-bottom: 30px" [translucent]="true">
   <ion-toolbar>
-    <ion-title> <img src="./assets/favicon.png" /> Z-Receita Online - {{nome}}</ion-title>
+    <ion-title style="left: 30px; position:relative; top: 50%"> <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%);"/> Z-Receita | {{nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -38,8 +38,12 @@
   <br />
 
   <form class="nova" [formGroup]="fGroup">
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">Preencha suas informações </ion-card-title>
+    </ion-card-header>
+
     <ion-item>
-      <ion-label>Nome</ion-label>
+      <ion-label style="width: 55px; text-align: left">Nome</ion-label>
       <ion-input
         required
         [(ngModel)]="Nome"
@@ -47,20 +51,21 @@
         formControlName="Nome"
       ></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label>Cpf</ion-label>
+    <ion-item class="CPF">
+      <ion-label style="width: 55px; text-align: left">CPF</ion-label>
       <ion-input
         required
         [(ngModel)]="Cpf"
         formControlName="Cpf"
+        type="tel"
         placeholder="999.999.999-99"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         mask="***.***.***-**"
         maxlength="14"
       ></ion-input>
     </ion-item>
-    <ion-item style="margin-bottom: 75px">
-      <ion-label>Celular</ion-label>
+    <ion-item style="margin-bottom: 75px" class="Celular">
+      <ion-label style="width: 55px; text-align: left">Celular</ion-label>
       <ion-input
         required
         [(ngModel)]="Celular"
@@ -75,40 +80,46 @@
     <br />
     <ion-button
       (click)="pic();"
-      style="margin-bottom: 100px"
+      style="margin-bottom: 30px"
       expand="block"
       color="medium"
     >
       Anexar Documento 1
     </ion-button>
-    <img class="center" *ngIf="picture !=''" [src]="picture" />
+    <img class="center" *ngIf="picture !=''" [src]="picture" style="margin-bottom: 30px" />
     <ion-button
       (click)="pic2();"
-      style="margin-bottom: 100px"
+      style="margin-bottom: 30px"
       expand="block"
       color="medium"
+      [style.display] = "DisplayBotao2"
+      [style.animation]="AnimacaoBotao2"
     >
       Anexar Documento 2
     </ion-button>
-    <img class="center" *ngIf="picture2 !=''" [src]="picture2" />
+    <img class="center" *ngIf="picture2 !=''" [src]="picture2" style="margin-bottom: 30px" [style.display] = "DisplayIMG2"/>
     <ion-button
       (click)="pic3();"
-      style="margin-bottom: 100px"
+      style="margin-bottom: 30px"
       expand="block"
       color="medium"
+      [style.display] = "DisplayBotao3"
+      [style.animation]="AnimacaoBotao3"
     >
       Anexar Documento 3
     </ion-button>
-    <img class="center" *ngIf="picture3 !=''" [src]="picture3" />
+    <img class="center" *ngIf="picture3 !=''" [src]="picture3" style="margin-bottom: 30px" [style.display] = "DisplayIMG3"/>
     <ion-button
       (click)="pic4();"
-      style="margin-bottom: 100px"
+      style="margin-bottom: 30px"
       expand="block"
       color="medium"
+      [style.display] = "DisplayBotao4"
+      [style.animation]="AnimacaoBotao4"
     >
       Anexar Documento 4
     </ion-button>
-    <img class="center" *ngIf="picture4 !=''" [src]="picture4" />
+    <img class="center" *ngIf="picture4 !=''" [src]="picture4" style="margin-bottom: 30px" [style.display] = "DisplayIMG4"/>
     <br />
     <ion-button
       style="margin-bottom: 100px"
@@ -124,9 +135,12 @@
 
 <ion-footer class="footer" collapse="fade">
   <ion-toolbar>
-    <ion-title>
-      <img src="./assets/favicon.png" /> © 2022 Powered by: <a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold;">Zip
-        Software</a></ion-title
+    <ion-title style="left: 30px; position:relative; top: 50%; font-size: 15px;">
+      <img src="./assets/favicon.png" style="position: absolute; top: 50%; transform: translate(-120%, -50%); height: 24px;"/> © 2022 Desenvolvido por: 
+      <a href="https://www.zipsoftware.com.br" target="_blank" style="text-decoration: none; color:initial; font-weight: bold">
+        ZiP Software
+      </a>
+    </ion-title
     >
   </ion-toolbar>
 </ion-footer>
