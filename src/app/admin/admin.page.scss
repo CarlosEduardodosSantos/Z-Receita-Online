@@ -1,3 +1,7 @@
+:root {
+  --Cor-De-fundo: linear-gradient(#EBE300, #D4B90B)
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -12,6 +16,23 @@
 .GRIMD {
   position: relative;
   min-height: 100%;
+}
+
+.HeaderTable {
+  background: linear-gradient(#FFEC19 55%, #E8BF0C); 
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.SeparadorFinal  {
+  width: 100%; 
+  height: 30px; 
+  background-color: rgb(242, 242, 242);
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .footer2 {
@@ -80,9 +101,15 @@ ion-content {
   height: 110%;
 }
 
-ion-col {
-  border: solid 1px grey;
+.itensGrind {
+  background: linear-gradient(90deg, white 60%, rgb(231, 230, 230));
 }
+
+.itensGrind ion-col {
+  border: 1px solid grey;
+  color: black;
+}
+
 
 @media screen and (max-width: 540px) {
   .footer2 {
@@ -99,12 +126,34 @@ ion-col {
     min-width: 135px;
   }
   .Detalhes {
-    min-width: 80px;
+    min-width: 78px;
   }
 }
 
 @media screen and (max-width: 540px) {
   .footerContainer {
     display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .HeaderTable {
+    color: black;
+  }
+  .SeparadorFinal {
+    background: rgb(17, 13, 13);
+  }
+
+  .itensGrind {
+    background: linear-gradient(90deg, #1f1f1f 60%, black);
+  }
+
+  .itensGrind ion-col {
+    color: white;
+  }  
+
+  .button-native {
+    color: white;
+    background-color: #1f1f1f;
   }
 }

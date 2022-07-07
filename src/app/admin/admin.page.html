@@ -26,15 +26,15 @@
     animated
   ></ion-searchbar>
   <ion-grid class="GRIMD">
-    <ion-row>
+    <ion-row class="HeaderTable">
       <ion-col hidden>Id</ion-col>
       <ion-col class="Nome">Nome</ion-col>
-      <ion-col class="Cpf">CPF</ion-col>
+      <ion-col class="Cpf" style="border-left: 2px solid grey; border-right: 2px solid grey;">CPF</ion-col>
       <ion-col class = "Data">Data</ion-col>
-      <ion-col class="Detalhes">Detalhes</ion-col>
+      <ion-col class="Detalhes" style="border-left: 2px solid grey;">Detalhes</ion-col>
     </ion-row>
     <div *ngFor="let item of receitas.results | filter:procura" class="body-content">
-      <ion-row>
+      <ion-row class="itensGrind">
         <ion-col hidden id="id" #id>{{item.id}}</ion-col>
         <ion-col class="Nome">{{ item.nome }}</ion-col>
         <ion-col class="Cpf">{{ item.cpf }}</ion-col>
@@ -53,6 +53,7 @@
         ></ion-col>
       </ion-row>
     </div>
+    <div class ="SeparadorFinal"></div>
   </ion-grid>
 </ion-content>
 
